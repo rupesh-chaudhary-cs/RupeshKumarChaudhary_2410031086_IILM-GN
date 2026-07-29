@@ -15,7 +15,7 @@ public:
                 return binarySearch(nums,target,low,mid-1);
             }
             return -1;
-        }
+    }
     int search(vector<int>& nums, int target) {
         return binarySearch(nums,target,0,nums.size()-1);
     }

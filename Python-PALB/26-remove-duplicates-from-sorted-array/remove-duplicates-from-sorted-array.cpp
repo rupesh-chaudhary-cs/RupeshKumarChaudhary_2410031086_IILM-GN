@@ -1,18 +1,17 @@
 class Solution {
 public:
-    int duplicates(vector<int>& nums){
-        vector<int>v;
-        int k=0;
-        for(int i=0;i<nums.size();i++){
-            if(v.empty() || nums[i]!=v[v.size()-1]){
-                v.push_back(nums[i]);
-                k++;
+    
+    int removeDuplicates(vector<int>& nums) {
+        int i=0;
+        int count=1;
+        for(int j=1;j<nums.size();j++){
+            if(nums[i]!=nums[j]){
+                nums[i+1]=nums[j];
+                i++;
+                count++;
             }
         }
-        nums=v;
-        return nums,k;
-    }
-    int removeDuplicates(vector<int>& nums) {
-        return duplicates(nums);
+       
+        return count;
     }
 };

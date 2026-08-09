@@ -11,8 +11,8 @@ public:
             currentSum+=nums[j];
         }
         if(requiredSum>currentSum){
-            int diff=requiredSum-currentSum;
-            return diff;
+            return requiredSum-currentSum;
+            
         }else if(requiredSum==currentSum){
             return  0;
         }

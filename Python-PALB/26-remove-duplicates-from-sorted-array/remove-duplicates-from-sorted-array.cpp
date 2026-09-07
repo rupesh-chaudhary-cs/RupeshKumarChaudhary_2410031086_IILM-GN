@@ -2,16 +2,17 @@ class Solution {
 public:
     
     int removeDuplicates(vector<int>& nums) {
-        int i=0;
-        int count=1;
-        for(int j=1;j<nums.size();j++){
-            if(nums[i]!=nums[j]){
-                nums[i+1]=nums[j];
-                i++;
-                count++;
-            }
+        map<int,int>mpp;
+        int count=0;
+        int j=0;
+        for(int i=0;i<nums.size();i++){
+            mpp[nums[i]]+=1;
         }
-       
+        for(auto it: mpp){
+            nums[j]=it.first;
+            j++;
+            count++;
+        }
         return count;
     }
 };

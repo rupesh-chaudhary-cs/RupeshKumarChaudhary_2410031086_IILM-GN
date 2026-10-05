@@ -1,22 +1,22 @@
 class Solution {
 public:
     int findNumbers(vector<int>& nums) {
-        int N=nums.size();
-        int count_even=0;
         int count=0;
+        int evenNumbers=0;
+        int N=nums.size();
         for(int i=0;i<N;i++){
-            int Num=nums[i];
-            while(Num>0){
-                int last_digit=Num%10;
-                count_even++;
-                Num=Num/10;
-            }
-            if(count_even%2==0){
+            int nums1=nums[i];
+            while(nums1>0){
+                int lastDigit=nums1%10;
+                nums1=nums1/10;
                 count++;
             }
-            count_even=0;
-
+            if(count%2==0){
+                evenNumbers++;
+            }
+            count=0;
         }
-        return count;
+        return evenNumbers;
+        
     }
 };

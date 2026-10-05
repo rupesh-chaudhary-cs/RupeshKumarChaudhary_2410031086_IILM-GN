@@ -2,15 +2,19 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int N=nums.size();
-        int val=N/2;
-        int ans;
+        int majorityElement=N/2;
+        int result;
         map<int,int>mpp;
         for(int i=0;i<N;i++){
             mpp[nums[i]]+=1;
-            if(mpp[nums[i]]>val){
-                ans=nums[i];
+        }
+        for(auto it:mpp){
+            if(it.second>N/2){
+                result=it.first;
             }
         }
-        return ans;
+        return result;
+        
+
     }
 };

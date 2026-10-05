@@ -7,12 +7,11 @@ public:
         map<int,int>mpp;
         for(int i=0;i<N;i++){
             mpp[nums[i]]+=1;
-        }
-        for(auto it:mpp){
-            if(it.second>N/2){
-                result=it.first;
+            if(mpp[nums[i]]>majorityElement){
+                result=nums[i];
             }
         }
+      
         return result;
         
 

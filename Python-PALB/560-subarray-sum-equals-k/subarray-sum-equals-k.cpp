@@ -2,6 +2,7 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         int N=nums.size();
+        int secondCount=0;
         int sum=0;
         int count=0;
         for(int i=0;i<N;i++){
@@ -13,7 +14,9 @@ public:
                 sum+=nums[j];
                 if(sum==k){
                     count++;
+                    
                 }
+                
             }
             sum=0;
         }

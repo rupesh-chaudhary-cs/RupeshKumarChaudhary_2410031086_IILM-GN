@@ -15,7 +15,7 @@ public:
             for(int j=0;j<n;j++){
               matrix1[k][l]=mat[i][j];
               l++;
-              if(l==c){
+              if(l>c-1){
                 l=0;
                 k++;
               }

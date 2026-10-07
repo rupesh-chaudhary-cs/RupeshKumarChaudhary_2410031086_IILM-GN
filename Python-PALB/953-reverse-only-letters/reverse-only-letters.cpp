@@ -13,9 +13,6 @@ public:
                 j--;
             }else if(!isalpha(s[i])){
                 i++;
-            }else{
-                i++;
-                j--;
             }
             
         }

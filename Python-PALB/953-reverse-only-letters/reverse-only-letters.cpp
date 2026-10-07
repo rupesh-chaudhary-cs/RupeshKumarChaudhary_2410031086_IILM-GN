@@ -9,9 +9,9 @@ public:
                 swap(s[i],s[j]);
                 i++;
                 j--;
-            }else if(isalpha(s[i]) && !isalpha(s[j])){
+            }else if(!isalpha(s[j])){
                 j--;
-            }else if(!isalpha(s[i]) && isalpha(s[j])){
+            }else if(!isalpha(s[i])){
                 i++;
             }else{
                 i++;

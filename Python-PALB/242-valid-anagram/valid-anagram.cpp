@@ -4,11 +4,11 @@ public:
         map<int,int>mpp;
         int N=s.size();
         int M=t.size();
-        for(int i=0;i<N;i++){
-            mpp[s[i]]+=1;
+        for(int i=0;i<M;i++){
+            mpp[t[i]]+=1;
         }
-        for(int j=0;j<M;j++){
-            mpp[t[j]]-=1;
+        for(int j=0;j<N;j++){
+            mpp[s[j]]-=1;
         }
         for(auto it: mpp){
             if(it.second!=0){

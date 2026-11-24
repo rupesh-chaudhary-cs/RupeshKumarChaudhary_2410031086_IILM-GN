@@ -1,0 +1,43 @@
+class MinStack {
+public:
+    stack<int>stk;
+    stack<int>minstk;
+    MinStack() {
+        
+    }
+    
+    void push(int value) {
+        stk.push(value);
+        if(minstk.empty()){
+            minstk.push(value);
+        }else if(value>minstk.top()){
+                minstk.push(minstk.top());
+        }else if(value<minstk.top()){
+            minstk.push(value);
+        }else if(value==minstk.top()){
+            minstk.push(value);
+        }
+    }
+    
+    void pop() {
+        stk.pop();
+        minstk.pop();
+    }
+    
+    int top() {
+        return stk.top();
+    }
+    
+    int getMin() {
+        return minstk.top();
+    }
+};
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj = new MinStack();
+ * obj->push(value);
+ * obj->pop();
+ * int param_3 = obj->top();
+ * int param_4 = obj->getMin();
+ */

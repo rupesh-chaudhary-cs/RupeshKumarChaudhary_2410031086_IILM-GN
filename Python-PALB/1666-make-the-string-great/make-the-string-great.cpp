@@ -1,24 +1,26 @@
 class Solution {
 public:
     string makeGood(string s) {
-        stack<char>st;
-        string str;
+        string str1="";
+        stack<char>stk;
         for(char ch:s){
-            if(st.empty()){
-                st.push(ch);
-            }else if(!st.empty()){
-                if(abs(st.top()-ch)==32){
-                    st.pop();
+            if(stk.empty()){
+                stk.push(ch);
+            }else{
+                if(ch-'a'==stk.top()-'A'){
+                    stk.pop();
+                }else if(ch-'A'==stk.top()-'a'){
+                    stk.pop();
                 }else{
-                    st.push(ch);
+                    stk.push(ch);
                 }
             }
         }
-        while(!st.empty()){
-            str+=st.top();
-            st.pop();
+        while(!stk.empty()){
+            str1+=stk.top();
+            stk.pop();
         }
-        reverse(str.begin(),str.end());
-        return str;
+        reverse(str1.begin(),str1.end());
+        return str1;
     }
 };

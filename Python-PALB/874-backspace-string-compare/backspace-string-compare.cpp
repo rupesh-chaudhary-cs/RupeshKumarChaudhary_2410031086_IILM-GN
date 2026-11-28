@@ -4,12 +4,9 @@ public:
         stack<char>stk1;
         stack<char>stk2;
         for(char ch1:s){
-            if(stk1.empty()){
-                if(ch1!='#'){
-                    stk1.push(ch1);
-                }
-                
-            }else{
+            if(stk1.empty() && ch1!='#'){
+                stk1.push(ch1);
+            }else if(!stk1.empty()){
                 if(ch1=='#'){
                     stk1.pop();
                 }else{
@@ -17,13 +14,10 @@ public:
                 }
             }
         }
-         for(char ch2:t){
-            if(stk2.empty()){
-                if(ch2!='#'){
-                    stk2.push(ch2);
-                }
-                
-            }else{
+        for(char ch2:t){
+            if(stk2.empty() && ch2!='#'){
+                stk2.push(ch2);
+            }else if(!stk2.empty()){
                 if(ch2=='#'){
                     stk2.pop();
                 }else{
